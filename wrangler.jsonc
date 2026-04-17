@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "instapix",
+          "database_id": "d6c22c65-6327-4d4f-be82-0862434e04bc"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "868bf452606e43b09a3cd3dec7dec77a",
+            "binding": "SECRET",
+            "secret_name": "INSTAPIX_DB"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
